@@ -11,4 +11,6 @@ public class ShortUrl {
     private Long createTime;
     private Long modifyTime;
 
+    public void setLongUrl(String longUrl) {
+    }
 }
