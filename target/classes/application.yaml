@@ -1,4 +1,0 @@
-server:
-  port: 18880
-  servlet:
-    context-path: /v1/api
