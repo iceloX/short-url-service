@@ -5,7 +5,6 @@ import cn.wayok.enums.EntityId;
 import cn.wayok.pojo.ShortUrl;
 import cn.wayok.pojo.dto.UrlDto;
 import cn.wayok.service.IShortUrlService;
-import io.swagger.v3.oas.annotations.media.Schema;
 import java.util.Date;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

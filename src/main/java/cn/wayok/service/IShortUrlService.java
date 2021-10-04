@@ -2,13 +2,11 @@ package cn.wayok.service;
 
 import cn.wayok.pojo.ShortUrl;
 import cn.wayok.pojo.dto.UrlDto;
-import org.springframework.stereotype.Service;
 
 /**
  * @author icelo
  * @date 2021/10/4
  */
-@Service
 public interface IShortUrlService {
 
     /**
