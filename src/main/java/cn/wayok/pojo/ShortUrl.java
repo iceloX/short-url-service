@@ -44,4 +44,6 @@ public class ShortUrl {
      */
     private Date modifyTime;
 
+    public void setLongUrl(String longUrl) {
+    }
 }
