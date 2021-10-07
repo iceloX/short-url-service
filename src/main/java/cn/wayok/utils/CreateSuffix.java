@@ -13,7 +13,7 @@ public class CreateSuffix {
      * 根据当前时间生成唯一短链后缀
      * @return 短链后缀
      */
-    public String getSuffix() {
+    public String getSuffix() throws InterruptedException {
         String  suffix = "";
         StringBuilder sb = new StringBuilder();
         long currentTime = System.currentTimeMillis();
@@ -25,11 +25,7 @@ public class CreateSuffix {
         }
         suffix = sb.toString();
         //进程休眠一毫秒，防止短时间内的多个请求结果相同
-        try {
-            Thread.sleep(1);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
+        Thread.sleep(1);
         return suffix;
     }
 }
