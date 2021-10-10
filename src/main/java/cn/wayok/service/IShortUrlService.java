@@ -12,12 +12,14 @@ public interface IShortUrlService {
     /**
      * 新增一条短链记录
      */
-    int insertOne(UrlDto urlDto);
+    int insertOne(UrlDto urlDto) throws InterruptedException;
 
     /**
      * 根据后缀来查询对应的长链接
      */
     ShortUrl getOne(String suffix);
+
+
 
 
 }

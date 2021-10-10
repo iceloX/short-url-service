@@ -1,10 +1,12 @@
-package cn.wayok.utils;
+package cn.wayok.core.impl;
+
+import cn.wayok.core.ICreateSuffix;
 
 /**
  * @author wayok
  * @date 2021/10/7
  */
-public class CreateSuffix {
+public class CreateSuffixByTime implements ICreateSuffix {
 
     private static String chars = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
     private static int scale = 62;
@@ -14,18 +16,16 @@ public class CreateSuffix {
      * @return 短链后缀
      */
     public String getSuffix() throws InterruptedException {
-        String  suffix = "";
-        StringBuilder sb = new StringBuilder();
+        StringBuilder suffix = new StringBuilder();
         long currentTime = System.currentTimeMillis();
         int index = 0;
         while(currentTime > scale - 1){
             index = (int) (currentTime % scale);
-            sb.append(chars.charAt(index));
+            suffix.append(chars.charAt(index));
             currentTime = currentTime / scale;
         }
-        suffix = sb.toString();
         //进程休眠一毫秒，防止短时间内的多个请求结果相同
         Thread.sleep(1);
-        return suffix;
+        return suffix.toString();
     }
 }
