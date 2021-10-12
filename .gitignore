@@ -1,3 +1,2 @@
-idea
-src/*
-!src/.gitkeep
+.idea
+/target/
