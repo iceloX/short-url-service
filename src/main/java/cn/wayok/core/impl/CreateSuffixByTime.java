@@ -29,4 +29,9 @@ public class CreateSuffixByTime implements ICreateSuffix {
         Thread.sleep(1);
         return suffix.toString();
     }
+
+    public static void main(String[] args) throws InterruptedException {
+        CreateSuffixByTime createSuffixByTime = new CreateSuffixByTime();
+        createSuffixByTime.getSuffix();
+    }
 }

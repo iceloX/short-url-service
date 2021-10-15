@@ -19,4 +19,8 @@ spring:
 notfound:
   url: https://google.com
 
+# 设置前端跳转短链的根域名
+root:
+  url: https://u.wayok.cn
+
 

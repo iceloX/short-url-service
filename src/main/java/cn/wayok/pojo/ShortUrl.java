@@ -43,7 +43,4 @@ public class ShortUrl {
      * 修改时间
      */
     private Date modifyTime;
-
-    public void setLongUrl(String longUrl) {
-    }
 }
