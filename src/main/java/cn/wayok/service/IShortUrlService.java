@@ -11,8 +11,9 @@ public interface IShortUrlService {
 
     /**
      * 新增一条短链记录
+     * @return
      */
-    int insertOne(UrlDto urlDto) throws InterruptedException;
+    String insertOne(UrlDto urlDto) throws InterruptedException;
 
     /**
      * 根据后缀来查询对应的长链接

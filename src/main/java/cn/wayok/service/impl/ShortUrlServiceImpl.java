@@ -1,6 +1,5 @@
 package cn.wayok.service.impl;
 
-import cn.wayok.core.ICreateSuffix;
 import cn.wayok.core.impl.CreateSuffixByTime;
 import cn.wayok.dao.IShortUrlMapper;
 import cn.wayok.enums.EntityId;
@@ -31,7 +30,7 @@ public class ShortUrlServiceImpl implements IShortUrlService {
     }
 
     @Override
-    public int insertOne(UrlDto urlDto) throws InterruptedException {
+    public String insertOne(UrlDto urlDto) throws InterruptedException {
         // 逻辑实现
         CreateSuffixByTime createSuffixByTime = new CreateSuffixByTime();
         String suffix = createSuffixByTime.getSuffix();
@@ -43,7 +42,8 @@ public class ShortUrlServiceImpl implements IShortUrlService {
             .createTime(new Date())
             .modifyTime(new Date())
             .build();
-        return shortUrlMapper.insertOne(shortUrl);
+        shortUrlMapper.insertOne(shortUrl);
+        return suffix;
     }
 
     @Override

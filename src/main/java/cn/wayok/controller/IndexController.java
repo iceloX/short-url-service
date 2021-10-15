@@ -6,6 +6,7 @@ import cn.wayok.pojo.dto.UrlDto;
 import cn.wayok.service.IShortUrlService;
 import io.swagger.v3.oas.annotations.Operation;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
@@ -17,6 +18,9 @@ import org.springframework.web.bind.annotation.*;
 public class IndexController {
 
     private IShortUrlService shortUrlService;
+
+    @Value(value = "${notfound.url}")
+    private String NOT_FOUND_URL ;
 
     @Autowired
     public void setShortUrlService(IShortUrlService shortUrlService) {
@@ -31,7 +35,9 @@ public class IndexController {
     }
 
     @PostMapping("url")
-    public void insertOne(@RequestBody UrlDto urlDto) throws InterruptedException {
-        shortUrlService.insertOne(urlDto);
+    public String insertOne(@RequestBody UrlDto urlDto) throws InterruptedException {
+        String shorturl = shortUrlService.insertOne(urlDto);
+        System.out.println(shorturl);
+        return "生成的短链地址："+NOT_FOUND_URL+"/"+shorturl;
     }
 }
