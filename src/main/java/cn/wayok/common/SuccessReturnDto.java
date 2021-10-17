@@ -19,12 +19,8 @@ import lombok.Setter;
 @NoArgsConstructor
 public class SuccessReturnDto {
 
-    private static final Integer code;
-    private static final String msg;
+    private  Integer code;
+    private  String msg;
     private Object data;
 
-    static {
-        code = ReturnCode.OK;
-        msg = ReturnMsg.OK;
-    }
 }

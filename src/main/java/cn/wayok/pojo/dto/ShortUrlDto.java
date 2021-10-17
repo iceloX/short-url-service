@@ -17,6 +17,6 @@ import lombok.Setter;
 @Builder
 public class ShortUrlDto {
 
-    private String shortUrl;
+    private String suffix;
 
 }

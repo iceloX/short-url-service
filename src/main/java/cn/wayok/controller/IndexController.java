@@ -1,5 +1,7 @@
 package cn.wayok.controller;
 
+import cn.wayok.common.ReturnCode;
+import cn.wayok.common.ReturnMsg;
 import cn.wayok.common.SuccessReturnDto;
 import cn.wayok.exception.NotFoundException;
 import cn.wayok.pojo.ShortUrl;
@@ -32,6 +34,8 @@ public class IndexController {
     public SuccessReturnDto index(@PathVariable String suffix) {
         UrlDto one = shortUrlService.getOne(suffix);
         return SuccessReturnDto.builder()
+            .code(ReturnCode.OK)
+            .msg(ReturnMsg.OK)
             .data(one)
             .build();
     }
@@ -42,6 +46,8 @@ public class IndexController {
         ShortUrlDto shorturl = shortUrlService.insertOne(urlDto);
 
         return SuccessReturnDto.builder()
+            .code(ReturnCode.OK)
+            .msg(ReturnMsg.OK)
             .data(shorturl)
             .build();
 

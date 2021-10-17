@@ -40,7 +40,6 @@ public class ShortUrlServiceImpl implements IShortUrlService {
         // 逻辑实现
         CreateSuffixByTime createSuffixByTime = new CreateSuffixByTime();
         String suffix = createSuffixByTime.getSuffix();
-        System.out.println(suffix);
         ShortUrl shortUrl = ShortUrl.builder()
             .id(EntityId.SHORT_URL.id())
             .origin(urlDto.getOrigin())
@@ -50,7 +49,7 @@ public class ShortUrlServiceImpl implements IShortUrlService {
             .build();
         shortUrlMapper.insertOne(shortUrl);
         return ShortUrlDto.builder()
-            .shortUrl(rootUrl + URL_SPLIT + suffix)
+            .suffix(suffix)
             .build();
     }
 
