@@ -15,6 +15,7 @@ public class CreateSuffixByTime implements ICreateSuffix {
      * 根据当前时间生成唯一短链后缀
      * @return 短链后缀
      */
+    @Override
     public String getSuffix() throws InterruptedException {
         StringBuilder suffix = new StringBuilder();
         long currentTime = System.currentTimeMillis();
@@ -27,5 +28,10 @@ public class CreateSuffixByTime implements ICreateSuffix {
         //进程休眠一毫秒，防止短时间内的多个请求结果相同
         Thread.sleep(1);
         return suffix.toString();
+    }
+
+    public static void main(String[] args) throws InterruptedException {
+        CreateSuffixByTime createSuffixByTime = new CreateSuffixByTime();
+        createSuffixByTime.getSuffix();
     }
 }

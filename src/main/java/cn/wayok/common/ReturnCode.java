@@ -7,9 +7,9 @@ package cn.wayok.common;
  */
 public final class ReturnCode {
 
-    public static Integer OK = 200;
-    public static Integer NOT_FOUND_ERROR = 404;
-    public static final Integer SERVER_ERROR = 500;
+    public final static Integer OK = 200;
+    public final static Integer NOT_FOUND_ERROR = 404;
+    public final static Integer SERVER_ERROR = 500;
 
 
 }
